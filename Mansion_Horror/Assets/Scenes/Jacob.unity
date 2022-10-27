@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7203542580459832792, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
+      propertyPath: minStaminaToSprint
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7203542580459832794, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
       propertyPath: m_RootOrder
       value: 2

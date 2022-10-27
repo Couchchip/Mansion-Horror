@@ -16,10 +16,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float maxStamina;
     [SerializeField] private float currentStamina;
-    [SerializeField] private float staminaRegenRate;
+    [SerializeField] private float minStaminaToSprint;
 
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isSprinting = false;
+    [SerializeField] private bool canSprint;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = walkSpeed;
         currentStamina = maxStamina;
+        canSprint = true;
     }
 
     // Update is called once per frame
@@ -68,29 +70,35 @@ public class PlayerMovement : MonoBehaviour
     void Sprinting()
     {
         //shift = sprint
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && canSprint)
         {
             isSprinting = true;
-            speed = sprintSpeed;
-
-        }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            isSprinting = false;
-            speed = walkSpeed;
-        }
-
-        //Stamina System
-        while(isSprinting)
-        {
             currentStamina = currentStamina - 1 * Time.deltaTime;
         }
-        while(!isSprinting)
+        else
         {
-
+            isSprinting = false;
+            if(currentStamina < 1)
+            {
+                canSprint = false;
+            }
+            if(currentStamina > minStaminaToSprint)
+            {
+                canSprint = true;
+            }
+            if(currentStamina < maxStamina)
+            {
+                currentStamina = currentStamina + 1 * Time.deltaTime;
+            }
         }
-            
-            
+
+        if(isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+            speed = walkSpeed;
+              
     }
 
 }

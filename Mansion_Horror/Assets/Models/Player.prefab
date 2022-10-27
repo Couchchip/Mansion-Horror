@@ -156,9 +156,8 @@ MonoBehaviour:
   jumpHeight: 0.05
   sprintSpeed: 7
   walkSpeed: 4
-  maxStamina: 100
+  maxStamina: 10
   currentStamina: 0
-  staminaRegenRate: 0
   isGrounded: 0
   isSprinting: 0
   groundCheck: {fileID: 7203542581966805393}
