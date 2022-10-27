@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         speed = walkSpeed;
+        currentStamina = maxStamina;
     }
 
     // Update is called once per frame
@@ -70,11 +72,22 @@ public class PlayerMovement : MonoBehaviour
         {
             isSprinting = true;
             speed = sprintSpeed;
+
         }
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             isSprinting = false;
             speed = walkSpeed;
+        }
+
+        //Stamina System
+        while(isSprinting)
+        {
+            currentStamina = currentStamina - 1 * Time.deltaTime;
+        }
+        while(!isSprinting)
+        {
+
         }
             
             
