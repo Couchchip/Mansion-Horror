@@ -379,22 +379,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 91828094, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
-      propertyPath: m_Range
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 613719832, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
-      propertyPath: m_Range
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 613719832, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
-      propertyPath: m_SpotAngle
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 613719832, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
-      propertyPath: m_InnerSpotAngle
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7203542580459832789, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
       propertyPath: m_Name
       value: Player

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     [SerializeField] private GameObject light1;
-    [SerializeField] private GameObject light2;
 
     [SerializeField] private bool isOn = false;
     //if character isn't holding, change to false
@@ -37,12 +36,10 @@ public class Flashlight : MonoBehaviour
         if (isOn)
         {
             light1.SetActive(true);
-            light2.SetActive(true);
         }
         if (!isOn)
         {
             light1.SetActive(false);
-            light2.SetActive(false);
         }
     }
 }
