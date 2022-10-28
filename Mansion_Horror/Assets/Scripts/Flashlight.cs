@@ -58,6 +58,10 @@ public class Flashlight : MonoBehaviour
             isOn = false;
             canTurnOn = false;
         }
+        else if(currentBattery >0)
+        {
+            canTurnOn = true;
+        }
 
     }
 
