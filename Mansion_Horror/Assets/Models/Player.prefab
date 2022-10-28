@@ -437,6 +437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light1: {fileID: 613719830}
+  maxBattery: 10
+  currentBattery: 0
+  canTurnOn: 0
   isOn: 0
   characterIsHolding: 0
 --- !u!1 &1546625523
