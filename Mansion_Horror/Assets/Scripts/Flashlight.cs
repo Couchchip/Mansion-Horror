@@ -27,11 +27,11 @@ public class Flashlight : MonoBehaviour
     {
         OnOff();
 
-        if (Input.GetKeyDown(KeyCode.R) && currentBattery < maxBattery && !isOn)
+        if (Input.GetKey(KeyCode.R) && currentBattery < maxBattery && !isOn)
         {
-            StartCoroutine(RechargeBattery());
-            StopCoroutine(RechargeBattery());
+            currentBattery = currentBattery + .5f * Time.deltaTime;
         }
+
     }
 
     void OnOff()
@@ -65,10 +65,6 @@ public class Flashlight : MonoBehaviour
 
     }
 
-    IEnumerator RechargeBattery()
-    {
-        currentBattery = currentBattery + .5f;
-        yield return new WaitForSeconds(.5f);
-    }
+   
 
 }
