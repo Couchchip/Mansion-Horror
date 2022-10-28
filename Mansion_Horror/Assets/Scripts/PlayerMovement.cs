@@ -17,10 +17,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxStamina;
     [SerializeField] private float currentStamina;
     [SerializeField] private float minStaminaToSprint;
+    [SerializeField] private float slowWalkSpeed;
 
     [SerializeField] private bool isGrounded;
     [SerializeField] private bool isSprinting = false;
     [SerializeField] private bool canSprint;
+    [SerializeField] private bool isSlowWalking = false;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
@@ -33,14 +35,14 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = walkSpeed;
         currentStamina = maxStamina;
-        canSprint = true;
+        //canSprint = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         Basics();
-        Sprinting();
+        SprintingAndWalking();
     }
 
     void Basics()
@@ -67,16 +69,19 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime);
     }
 
-    void Sprinting()
+    void SprintingAndWalking()
     {
-        //shift = sprint
+        //holding shift = sprint
         if(Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && canSprint)
         {
             isSprinting = true;
+            isSlowWalking = false;
+            //stamina drain
             currentStamina = currentStamina - 1 * Time.deltaTime;
         }
         else
         {
+            //stamina gain logic
             isSprinting = false;
             if(currentStamina < 1)
             {
@@ -92,13 +97,30 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(isSprinting)
-        {
-            speed = sprintSpeed;
-        }
+        //if is sprinting or slow walking, set speed
+        if (isSprinting)
+        { speed = sprintSpeed; }
+        else if (isSlowWalking)
+        { speed = slowWalkSpeed; }
         else
             speed = walkSpeed;
+
+
+
+        if(!isSprinting)
+        {
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                isSprinting = false;
+                isSlowWalking = true;
+            }
+            else
+                isSlowWalking=false;
+
+
+        }
               
     }
+
 
 }
