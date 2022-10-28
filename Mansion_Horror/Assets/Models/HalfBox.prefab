@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3662287221911426173}
   - component: {fileID: 3662287221911426946}
   - component: {fileID: 3662287221911426947}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HalfBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
