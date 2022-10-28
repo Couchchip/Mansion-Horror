@@ -159,9 +159,11 @@ MonoBehaviour:
   maxStamina: 10
   currentStamina: 0
   minStaminaToSprint: 5
+  slowWalkSpeed: 1
   isGrounded: 0
   isSprinting: 0
   canSprint: 0
+  isSlowWalking: 0
   groundCheck: {fileID: 7203542581966805393}
   groundMask:
     serializedVersion: 2
