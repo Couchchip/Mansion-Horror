@@ -224,10 +224,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1169904896, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
-      propertyPath: maxBattery
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7203542580459832789, guid: 11525f0b6a9c5a749a01115db8a140f7, type: 3}
       propertyPath: m_Name
       value: Player
