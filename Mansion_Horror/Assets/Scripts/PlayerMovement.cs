@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private CharacterController characterController;
+    public CharacterController characterController;
+    public EnergyDrink energyDrinkScript;
+
 
     [SerializeField] private float speed;
     [SerializeField] private float gravity;
@@ -43,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Basics();
         SprintingAndWalking();
+        if(energyDrinkScript.drinkIsFull)
+        {
+
+        }
     }
 
     void Basics()

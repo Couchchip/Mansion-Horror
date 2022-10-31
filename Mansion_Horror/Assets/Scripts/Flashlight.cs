@@ -18,6 +18,7 @@ public class Flashlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxBattery = 10;
         currentBattery = maxBattery;
         canTurnOn = true;
     }
